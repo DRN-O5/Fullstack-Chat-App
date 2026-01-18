@@ -1,0 +1,22 @@
+# node modules
+node_modules
+client/node_modules
+server/node_modules
+
+# env
+.env
+.env.production
+.env.*
+**/.env
+
+# git
+.git
+.gitignore
+
+# logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local build cache
+client/.vite
