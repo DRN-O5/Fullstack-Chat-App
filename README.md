@@ -1,30 +1,83 @@
-<h1>Real-Time Chat Application</h1>
-<h2>Overview</h2>
+# 💬 Real-Time Chat Application
 
-A real-time messaging application that supports instant message delivery using WebSockets. The project emphasizes scalable communication, authentication, and a responsive user experience.
+## 📌 Overview
 
-<h2>Libraries & Frameworks Used</h2>
+A full-stack **real-time chat application** that enables instant message delivery using **WebSockets**.  
+The project is designed with **scalability, authentication, and production-ready deployment** in mind, and is fully **Dockerized** to ensure consistent behavior across environments.
 
-React – Builds the interactive frontend interface.
+---
 
-Node.js – Executes backend logic and server processes.
+## 🚀 Features
 
-Express.js – Handles API routing and request management.
+- 🔄 Real-time messaging with WebSockets  
+- 🔐 User authentication & secure sessions  
+- 💾 Persistent chat history  
+- 📱 Responsive and modern UI  
+- 🐳 Fully Dockerized backend for production-ready deployment  
+- 🌍 Environment-based configuration (development vs production)
 
-MongoDB – Stores user data and chat history.
+---
 
-Socket.IO – Enables real-time, bidirectional messaging.
+## 🛠️ Tech Stack
 
-Tailwind CSS – Provides responsive UI styling.
+### Frontend
+- **React** – Builds the interactive user interface  
+- **Vite** – Fast development and optimized builds  
+- **Tailwind CSS** – Utility-first responsive styling  
+- **DaisyUI** – Prebuilt, customizable UI components  
+- **Zustand** – Lightweight global state management  
+- **Axios** – Handles API communication  
 
-DaisyUI – Supplies reusable UI components.
+### Backend
+- **Node.js** – JavaScript runtime  
+- **Express.js** – API routing and middleware  
+- **MongoDB** – Stores users and chat data  
+- **Mongoose** – MongoDB object modeling  
+- **Socket.IO** – Real-time, bidirectional communication  
 
-Zustand – Manages global application state.
+### DevOps & Deployment
+- **Docker** – Containerizes the backend for consistent, production-ready deployment  
+- **Docker Desktop** – Local container management and monitoring  
+- **Environment Variables** – Secure runtime configuration using `--env-file`
 
-Axios – Facilitates frontend-backend communication.
+---
 
-JSON Web Tokens (JWT) – Implements authentication and session security.
+## 🐳 Docker Setup (Production)
 
-CORS – Allows secure cross-origin requests.
+### Build the Docker Image
+```bash
+docker build -t chat-app .
+```
 
-Toast Notifications – Provides real-time user feedback.
+### Run the Container
+```bash
+docker run -p 5001:5001 --env-file .env.production chat-app
+```
+The backend runs on http://localhost:5001
+Frontend is served statically in production mode.
+
+## Environment Variables
+Create a ```.env.production``` file in the root directory:
+```env
+MONGODB_URI=mongodb
+PORT=5001
+JWT_SECRET=yoursecretkey
+
+CLOUDINARY_CLOUD_NAME=name
+CLOUDINARY_API_KEY=key
+CLOUDINARY_API_SECRET=secret
+
+NODE_ENV=development
+```
+⚠️ This file is intentionally ignored by Git and Docker to protect sensitive data.
+
+## 📁 Project Structure
+```bash
+root/
+├── client/        # React frontend
+├── server/        # Node.js backend
+├── Dockerfile
+├── .dockerignore
+├── package.json
+└── README.md
+```
